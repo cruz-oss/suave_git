@@ -1,6 +1,6 @@
 select * from categorias;
 select * from pedidos;
-select * from categorias, clientes; 
+select * from clientes; 
 select ID_Cliente AS 'codigo', Nome As 'cliente', Sexo As 'Genero' from clientes; 
 select * from clientes;
 select sum(Qtd_Filhos) As filhos from clientes; 
@@ -44,3 +44,25 @@ avg(Receita_Venda) As 'media_total',
 min(Receita_Venda) As 'Minimo_total',
 max(Receita_Venda) As 'Maximo_total'
 from pedidos;
+
+-- Group by
+select
+sexo,
+count(*) As 'Qt.Clientes'
+from clientes
+group by sexo; 
+
+select 
+Marca_Produto, 
+count(*) As 'Qt.Produtos'
+from produtos
+group by Marca_Produto;
+
+select * from produtos;
+select 
+  ID_Produto, Marca_Produto,
+  sum(Preco_Unit) As 'PrecoTotal',
+  sum(Custo_Unit) As 'CustoTotal'
+  from produtos
+  group by ID_Produto, Marca_Produto
+  order by 'PrecoTotal', 'CustoTotal' desc;
