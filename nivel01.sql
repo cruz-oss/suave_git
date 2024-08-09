@@ -66,3 +66,24 @@ select
   from produtos
   group by ID_Produto, Marca_Produto
   order by 'PrecoTotal', 'CustoTotal' desc;
+  
+  -- Tabelas com INNER JOIN
+  select * from pedidos;
+  select * from lojas;
+  
+  -- Tabela A --> Tabela fato --> Tabela Pedidos
+  -- Tabela B --> Tabela Dimensão -- Tabela Lojas
+  
+  -- Chave Primária (Lojas) --> ID_Loja
+  -- Chave Estrangeira (Pedidos) --> ID_Loja
+  select
+     pedidos.*,
+     lojas.Loja,
+     lojas.Gerente,
+     lojas.Telefone
+   from pedidos
+   inner join lojas
+       on pedidos.ID_Loja = lojas.ID_Loja;
+  
+  
+  
