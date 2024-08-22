@@ -84,6 +84,16 @@ select
    from pedidos
    inner join lojas
        on pedidos.ID_Loja = lojas.ID_Loja;
+
+-- Exemplos com inner join
+select clientes.Email, pedidos.ID_Produto, pedidos.Receita_Venda
+from clientes
+inner join pedidos on clientes.ID_Cliente = pedidos.ID_Cliente;   
+
+-- seleções de tabelas em treinamento
+select * from pedidos; 
+     
+       
   
   
   
