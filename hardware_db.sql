@@ -11,4 +11,8 @@ CREATE TABLE hardware_upgrade (
 
 -- Fazendo a busca na tabela
 select * from hardware_upgrade;
+
+-- deletando tabela
+DROP TABLE hardware_upgrade;
+
  
